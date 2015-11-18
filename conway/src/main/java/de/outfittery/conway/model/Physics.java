@@ -1,7 +1,20 @@
 package de.outfittery.conway.model;
 
+/**
+ * Implements rules to advance in time.
+ * 
+ * @author ps689
+ */
 public class Physics {
 	
+	/**
+	 * Determines fate of a given cell.
+	 * 
+	 * @param world
+	 * @param x
+	 * @param y
+	 * @return whether the cell will be live.
+	 */
 	public boolean advance(World world, int x, int y) {
 		int neighbors = world.getNeighbors(x, y);
 		

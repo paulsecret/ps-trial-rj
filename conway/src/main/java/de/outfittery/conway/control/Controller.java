@@ -51,11 +51,17 @@ public class Controller {
 		this.duration = duration;
 	}
 
+	/**
+	 * Advances the universe in time by one unit.
+	 */
 	public void tick() {
 		universe.tick();
 		++time;
 	}
 	
+	/**
+	 * Continuously advances and shows the universe.
+	 */
 	public void play() {
 		// show init state;
 		show();
@@ -66,7 +72,10 @@ public class Controller {
 		}
 	}
 	
-	private void show() {
+	/**
+	 * Plots the current world's state to standard output.
+	 */
+	public void show() {
 		World world = universe.getWorld();
 		int width = world.getWidth();
 		int height = world.getHeight();

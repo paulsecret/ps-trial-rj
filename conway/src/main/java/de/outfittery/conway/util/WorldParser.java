@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 import de.outfittery.conway.model.World;
 
+/**
+ * Parses a ASCII-encoded world file.
+ * 
+ * @author ps689
+ */
 public final class WorldParser {
 	
 	public static World parse(InputStream stream) {

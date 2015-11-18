@@ -32,8 +32,6 @@ public class World {
 		// assumes homogeneous array height
 		return worldMap[0].length;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {

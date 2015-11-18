@@ -1,5 +1,11 @@
 package de.outfittery.conway.model;
 
+/**
+ * Connects world and physics. Implements times via ticks.
+ * 
+ * @author ps689
+ *
+ */
 public class Universe {
 	
 	private World world;
