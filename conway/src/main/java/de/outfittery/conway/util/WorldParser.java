@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import de.outfittery.conway.model.World;
 
-public class WorldParser {
+public final class WorldParser {
 	
 	public static World parse(InputStream stream) {
 		Scanner scanner = new Scanner(stream);
@@ -14,7 +14,6 @@ public class WorldParser {
 		scanner.useDelimiter("\\n");
 		
 		int width = scanner.nextInt();
-//		scanner.next("\\s+");
 		int height = scanner.nextInt();
 		
 		scanner.nextLine();

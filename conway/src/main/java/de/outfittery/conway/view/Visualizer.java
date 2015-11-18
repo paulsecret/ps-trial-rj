@@ -8,11 +8,9 @@ public class Visualizer {
 		int width = world.getWidth();
 		int height = world.getHeight();
 		
-//		System.out.printf("%d x %d world\n", width, height);
-		
-		for (int i = 0; i < width; ++i) {
-			for (int j = 0; j < height; ++j) {
-				boolean alive = world.get(i, j);
+		for (int i = 0; i < height; ++i) {
+			for (int j = 0; j < width; ++j) {
+				boolean alive = world.get(j, i);
 				
 				System.out.print(alive ? 'X' : ' ');
 			}

@@ -8,19 +8,25 @@ import de.outfittery.conway.view.Visualizer;
 public class Controller {
 	
 	private Universe universe;
+	
 	private Visualizer visualizer;
 	
 	private int time = 0;
 	
+	private int duration = 0;
+	
 	public Controller() {
-		World world = makeWorld();
+		this(makeWorld());
+	}
+	
+	public Controller(World world) {
 		Physics physics = new Physics();
 		
 		universe = new Universe(world, physics);
 		visualizer = new Visualizer();
 	}
 	
-	private World makeWorld() {
+	private static World makeWorld() {
 		// TODO hard coded
 		int width = 10;
 		int height = 10;
@@ -37,14 +43,20 @@ public class Controller {
 		return world;
 	}
 	
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	public void tick() {
 		universe.tick();
 		++time;
 	}
 	
 	public void play() {
-		int duration = 10; // TODO hard coded
-		
 		// show init state;
 		show();
 		

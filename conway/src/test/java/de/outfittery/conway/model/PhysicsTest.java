@@ -1,35 +1,13 @@
 package de.outfittery.conway.model;
 
+import static de.outfittery.conway.model.WorldLoader.loadWorld;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.outfittery.conway.util.WorldParser;
-
 public class PhysicsTest {
-	
-	private static final String RESSOURCE_PATH = "src/test/resources/de/outfittery/conway/model/worlds/";
-	
-	private static World loadWorld(String filename) {
-		File file = new File(RESSOURCE_PATH + filename);
-		FileInputStream fis;
-		
-		try {
-			fis = new FileInputStream(file);
-		} catch (FileNotFoundException e) {
-			fail("world configuration file not found");
-			return null;
-		}
-		
-		return WorldParser.parse(fis);
-	}
 	
 	private Physics physics;
 	

@@ -4,25 +4,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import de.outfittery.conway.control.Controller;
 import de.outfittery.conway.model.World;
 import de.outfittery.conway.util.WorldParser;
-import de.outfittery.conway.view.Visualizer;
 
-public final class Test {
+public final class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
-//		Controller controller = new Controller();
-//		
-//		controller.play();
 		
 		File file = new File("conway.txt");
 		FileInputStream fis = new FileInputStream(file);
 		
 		World world = WorldParser.parse(fis);
-		
-		Visualizer visualizer = new Visualizer();
-		
-		visualizer.plot(world);
+
+		Controller controller = new Controller(world);
+		controller.setDuration(4);
+		controller.play();
 	}
 
 }

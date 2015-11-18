@@ -1,5 +1,7 @@
 package de.outfittery.conway.model;
 
+import java.util.Arrays;
+
 /**
  * Represents a section of live or dead cells of an infinite world. Cells
  * outside that section are considered dead and cannot be revived.
@@ -29,6 +31,30 @@ public class World {
 	public int getHeight() {
 		// assumes homogeneous array height
 		return worldMap[0].length;
+	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.deepHashCode(worldMap);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		World other = (World) obj;
+		if (!Arrays.deepEquals(worldMap, other.worldMap))
+			return false;
+		return true;
 	}
 
 	/**
